@@ -107,7 +107,7 @@ while opt!=0
             character = Character.new name, age, race, [role]
             system "clear"
             puts "Character created successfully: "
-            puts character
+            #puts character
             characters << character
             puts "Press RETURN to continue"
             gets
@@ -179,7 +179,7 @@ while opt!=0
             roles[name.to_sym] = role
             system "clear"
             puts "Role created successfully: "
-            puts role
+            #puts role
             puts "Press RETURN to continue"
             gets
         elsif opt == 3

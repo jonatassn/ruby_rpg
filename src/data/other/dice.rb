@@ -25,7 +25,7 @@ def render_dice max_number
             puts "*       *  *"
             puts "**********"
         end
-        sleep(0.3)
+        sleep(0.1)
     end
     rng_l
 end

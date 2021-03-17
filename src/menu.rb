@@ -1,5 +1,5 @@
 def main_menu_render opt
-    puts "Press s (down) or w (up) to toogle options or press - enter - to select"
+    puts "Press s (down) or w (up) to toogle options and press - (e) - to select"
     case opt
     when 1
         puts "-> Create a new Character"

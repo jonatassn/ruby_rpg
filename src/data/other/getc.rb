@@ -6,13 +6,15 @@ def read_char
   STDIN.raw!
 
   input = STDIN.getc.chr
+  exit(1) if input == "\u0003"
   if input == "\e" then
     input << STDIN.read_nonblock(3) rescue nil
     input << STDIN.read_nonblock(2) rescue nil
   end
 ensure
-  #STDIN.echo = !true
   STDIN.cooked!
+  STDIN.echo = true
+  
 
   return input
 end

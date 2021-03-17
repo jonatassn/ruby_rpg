@@ -6,9 +6,11 @@ require_relative './data/races/Race'
 require_relative './data/role/Role'
 require_relative './data/char/Character'
 require_relative 'menu'
+require_relative './data/other/getc'
 require_relative './data/other/dice'
 require_relative './data/other/Creature'
 require_relative './data/other/sprites'
+require 'faker'
 
 
 
@@ -51,15 +53,21 @@ characters = []
 opt = 1
 while opt!=0
     
+    system "cls"
     system "clear"
     main_menu_render opt
     c = read_char
     case c
-    when "\r"
+    when "e"
         if opt == 1
             system "clear"
-            puts "Type the character name: "
+            puts "Type the character name (leave blank to random name): "
             name = gets.strip
+            if name.empty?
+                puts "This may take a while..."
+                name = Faker::Games::Heroes.name
+                puts "Your character name is #{name}"
+            end
             puts "Type the character age: "
             age = gets.strip.to_i
             puts "Type the number of the character race"
